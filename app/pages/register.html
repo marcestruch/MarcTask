@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="style.css">
-    <script src="register.js"></script>
+    <script src="register.js" defer></script>
 </head>
 <body>
     <h1>MarcTask</h1>
         <section>
             <h2>Register</h2>
-            <form id="loginForm">
-                <div>
+            <form id="register-form">
                     <label for="user">usuario</label>
-                    <input type="text" id="user" placeholder="usuario" required>
-                </div>
-                <div>
+                    <input type="text" id="user" name="user" placeholder="usuario" required>
+
                     <label for="correo">Correo electronico</label>
-                    <input type="email" id="correo" placeholder="marcstruchmalonda@gmail.com" required>
-                </div>
-                <div>
+                    <input type="email" id="email" name="email" placeholder="marcstruchmalonda@gmail.com" required>
+
                     <label for="password">contraseña</label>
-                    <input type="password" id="password" placeholder="contraseña" required>
-                </div>
+                    <input type="password" id="password" name="password" placeholder="contraseña" required>
                 <button type="submit">Registrar</button>
             </form>
+            <p>¿Ya tienes cuenta? <a href="/">login</a></p>
         </section>
 </body>
 </html>

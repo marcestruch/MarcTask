@@ -60,10 +60,8 @@ form {
     gap: 16px;
 }
 
-form div {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+form > *:not(:last-child) {
+    margin-bottom: 6px;
 }
 
 label {
