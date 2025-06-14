@@ -1,18 +1,24 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    /* Usaremos el azulElectrico.jpg como fondo */
     background-image: url('fondo.jpg');
     background-size: cover;
+    background-position: center; /* Asegura que la imagen se centre */
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* Para el logo en la esquina superior izquierda */
+    position: relative; /* Necesario para posicionar el logo absolutamente */
 }
+
 body.menu{
-        font-family: Arial, Helvetica, sans-serif;
-    background-image: url('fondo1.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('fondo.jpg'); /* Usamos el mismo fondo para la clase menu */
     background-size: cover;
+    background-position: center;
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -20,13 +26,30 @@ body.menu{
     align-items: center;
     justify-content: center;
 }
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+.logo {
+    width: 150px; /* Tamaño del logo, puedes ajustarlo */
+    height: auto;
+}
+
+
 h1 {
-    color:#accce0;
+    /* Color blanco para que destaque sobre el fondo oscuro y coincida con el logo */
+    color: #FFFFFF; /* Blanco puro para el título principal */
     text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
     letter-spacing: 2px;
     font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejor visibilidad */
 }
 
 section {
@@ -36,17 +59,19 @@ section {
     justify-content: center;
     margin: 20px;
     padding: 32px 24px;
-    border: 1px solid #e3e3e3;
+    /* Fondo del formulario más sutil o ligeramente transparente para que se vea el fondo */
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco con ligera transparencia */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde más suave */
     border-radius: 16px;
-    background-color: #fff;
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el efecto flotante */
     width: 100%;
     max-width: 380px;
     transition: transform 0.2s;
 }
 
 h2 {
-    color: #2e86c1;
+    /* Un azul más oscuro que el del logo, pero que combine con el fondo azul eléctrico */
+    color: #007BFF; /* Un azul vibrante */
     margin-bottom: 24px;
     font-size: 1.3rem;
     font-weight: 600;
@@ -65,8 +90,9 @@ form > *:not(:last-child) {
 }
 
 label {
+    /* Un color de texto que contraste bien con el fondo del formulario */
+    color: #333333; /* Gris oscuro */
     font-size: 1rem;
-    color: #34495e;
     margin-bottom: 2px;
 }
 
@@ -75,25 +101,31 @@ input[type="password"],
 input[type="email"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #bfc9d1;
+    border: 1px solid #A0A0A0; /* Borde de input más neutro */
     border-radius: 6px;
-    background: #f7fafd;
+    background: #F0F0F0; /* Fondo de input ligeramente gris */
     font-size: 1rem;
     transition: border-color 0.2s;
     box-sizing: border-box;
+    color: #333333; /* Color del texto dentro del input */
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #2e86c1;
+    /* El borde de enfoque en un azul que complemente el diseño */
+    border-color: #007BFF; /* Mismo azul vibrante que h2 */
     outline: none;
-    background: #eaf6fb;
+    background: #E6F3FF; /* Fondo de enfoque más claro */
 }
 
-button[type="submit"] {
+button[type="submit"],
+.crear,
+.ver,
+.cerrar {
     padding: 12px 0;
-    background-color: #2e86c1;
+    /* Un azul que complemente el fondo azul eléctrico y el logo */
+    background-color: #007BFF; /* Azul vibrante para los botones */
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -101,59 +133,26 @@ button[type="submit"] {
     font-size: 1.1rem;
     font-weight: 600;
     margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(46, 134, 193, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* Sombra que refleje el color del botón */
     transition: background 0.2s, transform 0.1s;
 }
 
-button[type="submit"]:hover {
-    background-color: #1a5276;
+button[type="submit"]:hover,
+.crear:hover,
+.ver:hover,
+.cerrar:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
     transform: translateY(-2px) scale(1.03);
 }
 
-.crear{
-    padding: 22px 0;
-    background-color: #2e86c1;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(46, 134, 193, 0.08);
-    transition: background 0.2s, transform 0.1s;
-
+p a {
+    color: #007BFF; /* Enlaces en el mismo azul vibrante */
+    text-decoration: none;
 }
 
-.ver{
-    padding: 22px 0;
-    background-color: #2e86c1;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(46, 134, 193, 0.08);
-    transition: background 0.2s, transform 0.1s;
-
+p a:hover {
+    text-decoration: underline;
 }
 
-.cerrar{
-    padding: 22px 0;
-    background-color: #2e86c1;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(46, 134, 193, 0.08);
-    transition: background 0.2s, transform 0.1s;
-
-}
-button:hover{
-    background-color: #1a5276;
-}
+/* Quita el último cierre de llave que está de más */
+/* } */
