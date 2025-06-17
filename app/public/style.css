@@ -154,5 +154,10 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Quita el último cierre de llave que está de más */
-/* } */
+.error{
+  color: rgb(255, 81, 81);
+}
+
+.escondido{
+  display: none;
+}
